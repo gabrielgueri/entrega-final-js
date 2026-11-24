@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jokenpô - Pedra, Papel e Tesoura</title>
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Jokenpô</h1>
+      <div class="controls-top">
+        <button id="themeBtn" class="icon-btn" title="Alternar Tema">☀️ Modo Claro</button>
+        <button id="resetBtn" class="icon-btn" title="Reiniciar Jogo">🔄</button>
+      </div>
+    </header>
+
+    <div class="config-box">
+      <div class="input-group">
+        <label for="metaInput">Meta de vitórias:</label>
+        <input type="text" id="metaInput" placeholder="Ex: 3" value="3" />
+        <button id="definirMetaBtn" class="small-btn">Definir</button>
+      </div>
+      <p id="mensagemErro" class="error-msg"></p>
+      <p id="metaAtualTexto" class="meta-info">Meta atual: <strong>3 vitórias</strong></p>
+    </div>
+    
+    <div class="scoreboard">
+      <div class="score-box player">
+        <div class="score-label">Você</div>
+        <div class="score-value" id="playerScore">0</div>
+      </div>
+      <div class="score-box draw">
+        <div class="score-label">Empates</div>
+        <div class="score-value" id="drawScore">0</div>
+      </div>
+      <div class="score-box cpu">
+        <div class="score-label">CPU</div>
+        <div class="score-value" id="cpuScore">0</div>
+      </div>
+      <div class="score-box record">
+        <div class="score-label">Recorde</div>
+        <div class="score-value" id="recordScore">0</div>
+      </div>
+    </div>
+
+    <div class="arena">
+      <div class="fighters">
+        <div class="fighter">
+          <span class="fighter-tag">VOCÊ</span>
+          <div class="hand" id="playerHand">✊</div>
+        </div>
+        <div class="vs">VS</div>
+        <div class="fighter">
+          <span class="fighter-tag">CPU</span>
+          <div class="hand" id="cpuHand">✊</div>
+        </div>
+      </div>
+      <div class="status-text" id="statusText">Escolha sua jogada abaixo!</div>
+    </div>
+    
+    <div class="choices">
+      <button class="choice-btn" data-choice="pedra">
+        <span class="choice-emoji">✊</span>
+        <span class="choice-name">Pedra</span>
+      </button>
+      <button class="choice-btn" data-choice="papel">
+        <span class="choice-emoji">✋</span>
+        <span class="choice-name">Papel</span>
+      </button>
+      <button class="choice-btn" data-choice="tesoura">
+        <span class="choice-emoji">✌️</span>
+        <span class="choice-name">Tesoura</span>
+      </button>
+    </div>
+
+    <div class="history-section">
+      <div class="history-header">
+        <span>Histórico de Partidas</span>
+        <span id="roundCounter">0 rodadas</span>
+      </div>
+      <ul class="history-list" id="historyList">
+        <li class="empty-history">Nenhuma partida jogada ainda.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
